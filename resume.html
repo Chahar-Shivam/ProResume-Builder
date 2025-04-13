@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProResume Builder</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a class="navbar-brand" href="index.html">
+                <img src="favicon.png" alt="ProResume Builder Logo"> 
+                <strong>ProResume Builder</strong>
+            </a>
+            <ul> <li><a href="index.html">Back to Home</a></li> </ul>
+        </div>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="container main-content">
+        <h1>Resume Builder</h1>
+        <form id="resume-form" class="inputField">
+            <!-- Styling Options Section -->
+            <div class="form-section styling-options">
+                <h2>Preview Styling Options</h2>
+                <div class="style-controls">
+                    <div class="style-control">
+                        <label for="resume-font-family">Resume Font Family:</label>
+                        <select id="resume-font-family">
+                            <option value="Arial, Helvetica, sans-serif" selected>Arial (Default)</option>
+                            <option value="'Lato', sans-serif">Lato</option>
+                            <option value="'Roboto', sans-serif">Roboto</option>
+                            <option value="'Open Sans', sans-serif">Open Sans</option>
+                            <option value="'Montserrat', sans-serif">Montserrat</option>
+                            <option value="'Source Sans Pro', sans-serif">Source Sans Pro</option>
+                            <option value="'Merriweather', serif">Merriweather (Serif)</option>
+                        </select>
+                    </div>
+                    <div class="style-control">
+                        <label for="font-size">Text Size:</label>
+                        <select id="font-size">
+                            <option value="9pt">9pt</option>
+                            <option value="9.5pt">9.5pt</option>
+                            <option value="10pt" selected>10pt (Default)</option>
+                            <option value="10.5pt">10.5pt</option>
+                            <option value="11pt">11pt</option>
+                            <option value="12pt">12pt</option>
+                        </select>
+                    </div>
+                    <div class="style-control">
+                        <label for="heading-font-size">Heading Size:</label>
+                        <select id="heading-font-size">
+                            <option value="10pt">10pt</option>
+                            <option value="10.5pt">10.5pt</option>
+                            <option value="11pt" selected>11pt (Default)</option>
+                            <option value="11.5pt">11.5pt</option>
+                            <option value="12pt">12pt</option>
+                            <option value="13pt">13pt</option>
+                            <option value="14pt">14pt</option>
+                            <option value="15pt">15pt</option> 
+                        </select>
+                    </div>
+                    <div class="style-control">
+                        <label for="heading-color">Heading Text Color:</label>
+                        <input type="color" id="heading-color" value="#000000">
+                    </div>
+                     <div class="style-control">
+                        <label for="heading-bg-color">Heading Background:</label>
+                        <input type="color" id="heading-bg-color" value="#d9d9d9">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Info -->
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <input type="text" id="name-input" placeholder="e.g., Your Full Name" required>
+                <input type="email" id="email-input" placeholder="e.g., your.email@example.com">
+                <input type="tel" id="phone-input" placeholder="e.g., +91 12345 67890">
+            </div>
+
+            <!-- Education -->
+            <div class="form-section">
+                 <div class="section-toggle">
+                    <h2>Education</h2>
+                    <label><input type="checkbox" id="toggle-education" checked> Show</label>
+                 </div>
+                <div id="education-entries">
+                    <div class="education-entry-input"> 
+                        <input type="text" class="edu-degree" placeholder="Degree/Course (e.g., B.Tech Computer Engg.)">
+                        <input type="text" class="edu-year" placeholder="Year(s) (e.g., 2020-2024 or 2019)">
+                        <input type="text" class="edu-school" placeholder="School/University Name (e.g., Delhi Technological University)">
+                        <input type="text" class="edu-grade" placeholder="Grade/Score (e.g., 8.953 or 93.2%)">
+                        <button type="button" class="remove-entry-btn">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="add-education-btn">Add Education</button>
+            </div>
+
+            <!-- Internships -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                    <h2>Internships</h2>
+                    <label><input type="checkbox" id="toggle-internships" checked> Show</label>
+                 </div>
+                <div id="internship-entries">
+                    <div class="internship-entry-input"> 
+                        <input type="text" class="intern-title" placeholder="Job Title, Company, Location (e.g., Software Developer Intern, ABC, Bangalore)">
+                        <input type="text" class="intern-dates" placeholder="Dates (e.g., May 2021 - July 2021)">
+                        <textarea class="intern-desc" placeholder="Describe work. Start each point with * (e.g., * Worked on XYZ feature...)"></textarea>
+                        <button type="button" class="remove-entry-btn">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="add-internship-btn">Add Internship</button>
+            </div>
+
+            <!-- Academic Projects -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                    <h2>Academic Projects</h2>
+                     <label><input type="checkbox" id="toggle-projects" checked> Show</label>
+                 </div>
+                <div id="project-entries">
+                     <div class="project-entry-input"> 
+                        <input type="text" class="proj-title" placeholder="Project Title | Link | Technologies (e.g., Project XYZ | Link | Firebase, Android SDK)">
+                        <textarea class="proj-desc" placeholder="Describe the project. Start each point with * (e.g., * Architected using Google APIs...)"></textarea>
+                        <button type="button" class="remove-entry-btn">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="add-project-btn">Add Project</button>
+            </div>
+
+            <!-- Academic Achievements -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                    <h2>Academic Achievements and Awards</h2>
+                     <label><input type="checkbox" id="toggle-achievements" checked> Show</label>
+                 </div>
+                 <div id="achievement-entries">
+                     <div class="achievement-entry-input"> 
+                        <textarea class="achievement-desc" placeholder="List achievements. Start each point with * (e.g., * 4 Star Coder on CodeChef (max 1818)...)"></textarea>
+                     </div>
+                 </div>
+             </div>
+
+            <!-- Technical Skills -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                     <h2>Technical Skills</h2>
+                     <label><input type="checkbox" id="toggle-skills" checked> Show</label>
+                 </div>
+                <div id="skills-entries">
+                    <div class="skills-entry-input"> 
+                         <input type="text" class="skill-category1" placeholder="Languages (e.g., C++, Python, Javascript)">
+                         <input type="text" class="skill-category2" placeholder="Frameworks/Web (e.g., React, Django)">
+                         <input type="text" class="skill-category3" placeholder="Tools/Other (e.g., Git, VSCode, Jira)">
+                         <button type="button" class="remove-entry-btn">Remove</button>
+                    </div>
+                </div>
+                 <button type="button" id="add-skill-row-btn">Add Skill Row</button>
+            </div>
+
+            <!-- Positions of Responsibility -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                     <h2>Positions of Responsibility</h2>
+                     <label><input type="checkbox" id="toggle-responsibility" checked> Show</label>
+                 </div>
+                 <div id="responsibility-entries">
+                     <div class="responsibility-entry-input"> 
+                         <textarea class="responsibility-desc" placeholder="Describe positions. Start point with *. Use 2 spaces before * for sub-points (e.g., * Coordinator (Event X)...&#10;  * Role details...&#10;  * Achievements...)"></textarea>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Extra-Curricular Activities -->
+             <div class="form-section">
+                 <div class="section-toggle">
+                     <h2>Extra-Curricular Activities</h2>
+                     <label><input type="checkbox" id="toggle-extracurricular" checked> Show</label>
+                 </div>
+                 <div id="extracurricular-entries">
+                     <div class="extracurricular-entry-input"> 
+                         <textarea class="extracurricular-desc" placeholder="List activities. Start each point with * (e.g., * Won awards in Club X...)"></textarea>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Other Information -->
+            <div class="form-section">
+                 <div class="section-toggle">
+                     <h2>Other Information</h2>
+                     <label><input type="checkbox" id="toggle-other-info" checked> Show</label>
+                 </div>
+                 <div id="other-info-entries">
+                     <div class="other-info-entry-input">
+                         <textarea class="other-info-desc" placeholder="Links (GitHub, LinkedIn, Portfolio), Languages Known, etc. Start points with *"></textarea>
+                     </div>
+                 </div>
+            </div>
+
+            <br><br>
+            <button type="button" id="preview-btn">Generate/Update Resume</button>
+            <button type="button" id="download-btn">Download PDF</button>
+        </form>
+
+        <!-- Resume Preview Section Container -->
+        <div id="resume-preview-container">
+            <div id="resume-preview">
+                <!-- Header -->
+                <div class="header-preview">
+                    <h1 id="preview-name">YOUR NAME</h1>
+                    <p id="preview-contact"><span id="preview-email">email@example.com</span> | <span id="preview-phone">+XX XXXXXXXXXX</span></p>
+                </div>
+                <!-- Preview sections -->
+                 <div class="section" id="section-education"><h2 class="section-title">EDUCATION</h2><table id="preview-education-table" class="styled-table"><tbody></tbody></table></div>
+                <div class="section" id="section-internships"><h2 class="section-title">INTERNSHIPS</h2><div id="preview-internships"></div></div>
+                 <div class="section" id="section-projects"><h2 class="section-title">ACADEMIC PROJECT</h2><div id="preview-projects"></div></div>
+                 <div class="section" id="section-achievements"><h2 class="section-title">ACADEMIC ACHIEVEMENTS AND AWARDS</h2><div id="preview-achievements"></div></div>
+                 <div class="section" id="section-skills"><h2 class="section-title">TECHNICAL SKILLS</h2><table id="preview-skills-table" class="skills-table"><tbody></tbody></table></div>
+                 <div class="section" id="section-responsibility"><h2 class="section-title">POSITIONS OF RESPONSIBILITY</h2><div id="preview-responsibilities"></div></div>
+                 <div class="section" id="section-extracurricular"><h2 class="section-title">EXTRA-CURRICULAR ACTIVITIES AND ACHIEVEMENTS</h2><div id="preview-extracurricular"></div></div>
+                 <div class="section" id="section-other-info"><h2 class="section-title">OTHER INFORMATION</h2><div id="preview-other-info"></div></div>
+            </div> 
+        </div>
+
+    </div> 
+
+    <!-- html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
