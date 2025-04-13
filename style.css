@@ -1,0 +1,262 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 10pt;
+    /* Background Image */
+    background-image: url('image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f4f6f9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    padding-top: 100px; /* Space below fixed nav */
+    padding-bottom: 40px;
+}
+
+/* Navigation Bar   */
+nav {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar-brand img {
+    height: 40px; /* logo height */
+    width: auto;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0; padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+/* Resume Builder Form */
+.inputField {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px 45px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+}
+
+.main-content > h1 {
+    text-align: center;
+    color: #ffffff; 
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 30px;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Form Section Styling */
+.inputField .form-section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #2595e0; 
+}
+.inputField .form-section:last-of-type {
+    border-bottom: none; margin-bottom: 10px; padding-bottom: 0;
+}
+
+/* Styling Options */
+.inputField .styling-options h2 { margin-bottom: 15px; font-size: 1.4em; font-weight: 700; color: #34495e; }
+.inputField .style-controls { display: flex; flex-wrap: wrap; gap: 20px 30px; align-items: center; padding: 10px 0; }
+.inputField .style-control { display: flex; align-items: center; gap: 8px; }
+.inputField .style-control label { margin-bottom: 0; font-weight: 600; font-size: 0.95em; color: #555; white-space: nowrap; }
+.inputField .style-control select,
+.inputField .style-control input[type="color"] {
+    padding: 5px 8px; border: 1px solid #ccc; border-radius: 6px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.95em; margin: 0; height: 35px; box-sizing: border-box;
+}
+.inputField .style-control select { min-width: 100px; }
+.inputField .style-control input[type="color"] { width: 50px; cursor: pointer; padding: 2px; }
+
+/* Section Toggle Styling */
+.inputField .section-toggle { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.inputField .section-toggle h2 {
+    margin: 0; border-bottom: none; padding-bottom: 0; font-size: 1.4em; font-weight: 700; color: #34495e;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.inputField .section-toggle label { font-size: 0.9em; color: #555; cursor: pointer; display: inline-flex; align-items: center; }
+.inputField .section-toggle input[type="checkbox"] { margin-right: 6px; transform: scale(1.1); cursor: pointer; }
+
+/* Input Fields & Textarea Styling */
+.inputField input[type="text"],
+.inputField input[type="email"],
+.inputField input[type="tel"],
+.inputField textarea {
+    width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #ccc;
+    border-radius: 8px; box-sizing: border-box; font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f9f9f9; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.inputField textarea { min-height: 100px; resize: vertical; }
+
+/* Input Styling */
+.inputField input:focus, .inputField textarea:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); background-color: #fff; }
+
+/* Placeholder Styling */
+.inputField ::placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6c757d; font-style: normal; font-size: 0.95em; opacity: 1;
+}
+.inputField ::-webkit-input-placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6c757d; font-style: normal;
+}
+.inputField :-moz-placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6c757d; font-style: normal; opacity: 1;
+}
+.inputField ::-moz-placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6c757d; font-style: normal; opacity: 1;
+}
+.inputField :-ms-input-placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6c757d; font-style: normal;
+}
+
+.inputField div[class$="-entry-input"] { padding: 20px; border: 1px solid #e7eaec; margin-bottom: 15px; position: relative; overflow: hidden; background-color: #fdfdfd; border-radius: 8px; }
+
+/* Button Styles */
+.inputField button {
+    background-color: #28a745; color: white; padding: 8px 18px; border: none;
+    border-radius: 8px; cursor: pointer; font-size: 0.95em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600; margin-right: 10px; margin-top: 0px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+.inputField button:hover { background-color: #218838; }
+.inputField button:active { transform: scale(0.97); }
+.inputField .remove-entry-btn { background-color: #dc3545; font-size: 0.8em; padding: 4px 10px; float: right; margin-top: 0; box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3); }
+.inputField .remove-entry-btn:hover { background-color: #c82333; }
+.inputField #achievement-entries .remove-entry-btn, .inputField #responsibility-entries .remove-entry-btn, .inputField #extracurricular-entries .remove-entry-btn, .inputField #other-info-entries .remove-entry-btn { display: none; }
+
+/* Main Action Buttons */
+.inputField #preview-btn, .inputField #download-btn {
+    display: inline-block; padding: 12px 28px; font-size: 1.05em; font-weight: 700;
+    margin-top: 30px; border-radius: 8px; width: auto; background-color: #007bff;
+    color: white; border: none; box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    cursor: pointer; transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.inputField #preview-btn:hover { background-color: #0056b3; transform: translateY(-2px); }
+.inputField #preview-btn:active { transform: translateY(0); }
+.inputField #download-btn { background-color: #17a2b8; box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3); }
+.inputField #download-btn:hover { background-color: #138496; transform: translateY(-2px); }
+.inputField #download-btn:active { transform: translateY(0); }
+
+/* Resume Preview Styles */
+#resume-preview-container {
+    background-color: rgba(232, 232, 232, 0.85); padding: 30px 0; margin-top: 60px; border-radius: 8px;
+}
+#resume-preview {
+    background-color: #ffffff; width: 210mm; height: auto;
+    margin: 0 auto; padding: 15mm 12mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); box-sizing: border-box;
+    color: #000; display: block; line-height: 1.4;
+
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-size: 10pt;
+    --heading-font-size: 11pt;
+    --heading-color: #000000;
+    --heading-bg-color: #d9d9d9;
+    --heading-border-color: #a6a6a6;
+
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+#resume-preview .header-preview { text-align: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #000; }
+#resume-preview .header-preview h1 { font-family: var(--font-family); font-size: 18pt; font-weight: bold; margin: 0 0 5px 0; color: #000; text-align: center; }
+#resume-preview .header-preview p { font-family: var(--font-family); font-size: var(--font-size); margin: 0; color: #333; text-align: center; line-height: 1.4; }
+#resume-preview .section { margin-bottom: 10px; }
+#resume-preview .section-title { font-weight: bold; padding: 3px 8px; margin: 0 0 8px 0; text-transform: uppercase; line-height: 1.4; border: 1px solid var(--heading-border-color); font-family: var(--font-family); font-size: var(--heading-font-size); color: var(--heading-color); background-color: var(--heading-bg-color); }
+#resume-preview .styled-table, #resume-preview .skills-table { width: 100%; border-collapse: collapse; margin-bottom: 5px; }
+#resume-preview .styled-table td, #resume-preview .skills-table td { border: 1px solid #000; padding: 4px 6px; vertical-align: top; font-family: var(--font-family); font-size: var(--font-size); line-height: 1.4; }
+#resume-preview .styled-table td:nth-child(1) { width: 35%; } #resume-preview .styled-table td:nth-child(2) { width: 15%; text-align: center; } #resume-preview .styled-table td:nth-child(3) { width: 35%; } #resume-preview .styled-table td:nth-child(4) { width: 15%; text-align: right; }
+
+#resume-preview .entry { margin-bottom: 8px; }
+#resume-preview .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; font-weight: bold; font-family: var(--font-family); font-size: var(--font-size); }
+#resume-preview .entry-title { padding-right: 10px; }
+#resume-preview .entry-dates { font-weight: normal; white-space: nowrap; font-style: italic; color: #333; flex-shrink: 0; font-family: var(--font-family); font-size: var(--font-size); }
+#resume-preview #preview-projects .entry-header { justify-content: flex-start; }
+#resume-preview .entry-details { list-style-type: disc; margin: 0 0 5px 20px; padding: 0; font-family: var(--font-family); font-size: var(--font-size); line-height: 1.3; }
+#resume-preview .entry-details li { margin-bottom: 3px; }
+#resume-preview .entry-details ul { list-style-type: circle; margin-top: 2px; margin-bottom: 4px; margin-left: 15px; }
+
+@media print {
+    body { background: none !important; padding: 0; margin: 0; }
+    nav, #resume-form, #preview-btn, #download-btn, .main-content > h1 { display: none; }
+    .main-content { padding-top: 0; }
+    #resume-preview-container { background-color: transparent; padding: 0; margin-top: 0; }
+    #resume-preview { width: 100%; height: auto; margin: 0; padding: 0; box-shadow: none; border: none; min-height: 0; font-family: var(--font-family) !important; font-size: var(--font-size) !important; }
+    #resume-preview * { font-family: var(--font-family) !important; }
+    #resume-preview h1, #resume-preview h2, #resume-preview td, #resume-preview li, #resume-preview p { font-size: var(--font-size) !important; }
+    #resume-preview .header-preview h1 { font-size: 18pt !important; }
+    #resume-preview .section-title { font-family: var(--font-family) !important; font-size: var(--heading-font-size) !important; color: var(--heading-color) !important; background-color: var(--heading-bg-color) !important; border: 1px solid var(--heading-border-color) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #resume-preview .section, #resume-preview .entry { page-break-inside: avoid; }
+    #resume-preview table { page-break-inside: auto; }
+    #resume-preview tr { page-break-inside: avoid; }
+}
