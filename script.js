@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Input Containers & Add Buttons
     const educationEntries = document.getElementById('education-entries');
-    const internshipEntries = document.getElementById('internship-entries');
+    const experienceEntries = document.getElementById('experience-entries');
     const projectEntries = document.getElementById('project-entries');
     const achievementEntries = document.getElementById('achievement-entries');
     const skillsEntries = document.getElementById('skills-entries');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const extracurricularEntries = document.getElementById('extracurricular-entries');
     const otherInfoEntries = document.getElementById('other-info-entries');
     const addEducationBtn = document.getElementById('add-education-btn');
-    const addInternshipBtn = document.getElementById('add-internship-btn');
+    const addExperienceBtn = document.getElementById('add-experience-btn');
     const addProjectBtn = document.getElementById('add-project-btn');
     const addSkillRowBtn = document.getElementById('add-skill-row-btn');
 
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewPhone = document.getElementById('preview-phone');
     const sectionEducation = document.getElementById('section-education');
     const previewEducationTableBody = document.querySelector('#preview-education-table tbody');
-    const sectionInternships = document.getElementById('section-internships');
-    const previewInternships = document.getElementById('preview-internships');
+    const sectionExperience = document.getElementById('section-experience');
+    const previewExperience = document.getElementById('preview-experience');
     const sectionProjects = document.getElementById('section-projects');
     const previewProjects = document.getElementById('preview-projects');
     const sectionAchievements = document.getElementById('section-achievements');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle Checkboxes
     const toggleEducation = document.getElementById('toggle-education');
-    const toggleInternships = document.getElementById('toggle-internships');
+    const toggleExperience = document.getElementById('toggle-experience');
     const toggleProjects = document.getElementById('toggle-projects');
     const toggleAchievements = document.getElementById('toggle-achievements');
     const toggleSkills = document.getElementById('toggle-skills');
@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add field entry if all are removed
     const educationTemplate = educationEntries?.querySelector('.education-entry-input')?.cloneNode(true);
-    const internshipTemplate = internshipEntries?.querySelector('.internship-entry-input')?.cloneNode(true);
+    const experienceTemplate = experienceEntries?.querySelector('.experience-entry-input')?.cloneNode(true);
     const projectTemplate = projectEntries?.querySelector('.project-entry-input')?.cloneNode(true);
     const skillsTemplate = skillsEntries?.querySelector('.skills-entry-input')?.cloneNode(true);
     if (!educationTemplate) console.error("Initial Education template missing!");
-    if (!internshipTemplate) console.error("Initial Internship template missing!");
+    if (!experienceTemplate) console.error("Initial Experience template missing!");
     if (!projectTemplate) console.error("Initial Project template missing!");
     if (!skillsTemplate) console.error("Initial Skills template missing!");
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add button listeners
     if (addEducationBtn) addEducationBtn.addEventListener('click', () => addEntry(educationEntries, educationTemplate));
-    if (addInternshipBtn) addInternshipBtn.addEventListener('click', () => addEntry(internshipEntries, internshipTemplate));
+    if (addExperienceBtn) addExperienceBtn.addEventListener('click', () => addEntry(experienceEntries, experienceTemplate));
     if (addProjectBtn) addProjectBtn.addEventListener('click', () => addEntry(projectEntries, projectTemplate));
     if (addSkillRowBtn) addSkillRowBtn.addEventListener('click', () => addEntry(skillsEntries, skillsTemplate));
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     if(educationEntries) educationEntries.addEventListener('click', (e) => handleRemove(e, '.education-entry-input'));
-    if(internshipEntries) internshipEntries.addEventListener('click', (e) => handleRemove(e, '.internship-entry-input'));
+    if(experienceEntries) experienceEntries.addEventListener('click', (e) => handleRemove(e, '.experience-entry-input'));
     if(projectEntries) projectEntries.addEventListener('click', (e) => handleRemove(e, '.project-entry-input'));
     if(skillsEntries) skillsEntries.addEventListener('click', (e) => handleRemove(e, '.skills-entry-input'));
 
@@ -182,19 +182,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     educationInputs?.forEach(entry => {
                         const degree = entry.querySelector('.edu-degree')?.value.trim(); const year = entry.querySelector('.edu-year')?.value.trim();
                         const school = entry.querySelector('.edu-school')?.value.trim(); const grade = entry.querySelector('.edu-grade')?.value.trim();
-                        if (degree || year || school || grade) { const row = previewEducationTableBody.insertRow(); row.insertCell(0).textContent = degree || ''; row.insertCell(1).textContent = year || ''; row.insertCell(2).textContent = school || ''; row.insertCell(3).textContent = grade || ''; } });
+                        if (degree || year || school || grade) { const row = previewEducationTableBody.insertRow(); 
+                                                                 row.insertCell(0).textContent = degree || ''; 
+                                                                 row.insertCell(1).textContent = year || ''; 
+                                                                 row.insertCell(2).textContent = school || ''; 
+                                                                 row.insertCell(3).textContent = grade || ''; } });
                 } else { sectionEducation.style.display = 'none'; }
             } else { console.warn("Education elements not found"); }
 
-             // 3. Internships
-             if (sectionInternships && toggleInternships && previewInternships && internshipEntries) {
-                if (toggleInternships.checked) { sectionInternships.style.display = 'block'; previewInternships.innerHTML = '';
-                    const internshipInputs = internshipEntries.querySelectorAll('.internship-entry-input');
-                    internshipInputs?.forEach(entry => {
-                        const title = entry.querySelector('.intern-title')?.value.trim(); const dates = entry.querySelector('.intern-dates')?.value.trim(); const desc = entry.querySelector('.intern-desc')?.value;
-                        if (title || dates || desc) { const entryDiv = document.createElement('div'); entryDiv.className = 'entry'; const headerDiv = document.createElement('div'); headerDiv.className = 'entry-header'; const titleSpan = document.createElement('span'); titleSpan.className = 'entry-title'; titleSpan.textContent = title || ''; const dateSpan = document.createElement('span'); dateSpan.className = 'entry-dates'; dateSpan.textContent = dates || ''; headerDiv.appendChild(titleSpan); headerDiv.appendChild(dateSpan); entryDiv.appendChild(headerDiv); const list = createBulletList(desc); if (list) entryDiv.appendChild(list); previewInternships.appendChild(entryDiv); } });
-                } else { sectionInternships.style.display = 'none'; }
-            } else { console.warn("Internship elements not found"); }
+             // 3. Work Experience
+             if (sectionExperience && toggleExperience && previewExperience && experienceEntries) {
+                if (toggleExperience.checked) { sectionExperience.style.display = 'block'; previewExperience.innerHTML = '';
+                    const experienceInputs = experienceEntries.querySelectorAll('.experience-entry-input');
+                    experienceInputs?.forEach(entry => {
+                        const title = entry.querySelector('.experience-title')?.value.trim(); const dates = entry.querySelector('.experience-dates')?.value.trim(); const desc = entry.querySelector('.experience-desc')?.value;
+                        if (title || dates || desc) { const entryDiv = document.createElement('div'); 
+                                                      entryDiv.className = 'entry'; const headerDiv = document.createElement('div'); 
+                                                      headerDiv.className = 'entry-header'; const titleSpan = document.createElement('span'); 
+                                                      titleSpan.className = 'entry-title'; titleSpan.textContent = title || ''; 
+                                                      const dateSpan = document.createElement('span'); dateSpan.className = 'entry-dates'; 
+                                                      dateSpan.textContent = dates || ''; headerDiv.appendChild(titleSpan); 
+                                                      headerDiv.appendChild(dateSpan); entryDiv.appendChild(headerDiv); 
+                                                      const list = createBulletList(desc); if (list) entryDiv.appendChild(list); 
+                                                      previewExperience.appendChild(entryDiv); } });
+                } else { sectionExperience.style.display = 'none'; }
+            } else { console.warn("Experience elements not found"); }
 
              // 4. Projects
             if (sectionProjects && toggleProjects && previewProjects && projectEntries) {
